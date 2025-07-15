@@ -8,7 +8,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 import rent.vehicle.constants.ApiPaths;
-import rent.vehicle.dashboardserviceapi.device.config.CustomPage;
+import rent.vehicle.dashboardserviceapi.config.CustomPage;
 import rent.vehicle.dashboardserviceapi.device.config.QueryParamUtil;
 import rent.vehicle.dto.ListVehiclesRequest;
 import rent.vehicle.dto.PointFromLatLonDto;

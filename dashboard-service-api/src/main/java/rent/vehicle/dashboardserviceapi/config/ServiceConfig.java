@@ -1,8 +1,7 @@
-package rent.vehicle.dashboardserviceapi.device.config;
+package rent.vehicle.dashboardserviceapi.config;
 
 
 import org.modelmapper.ModelMapper;
-import org.modelmapper.PropertyMap;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,8 +10,6 @@ import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import rent.vehicle.dto.PointFromLatLonDto;
-import rent.vehicle.dto.VehicleDto;
 
 import java.util.Collections;
 
