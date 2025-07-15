@@ -2,7 +2,7 @@ package rent.vehicle.dashboardserviceapi.device.service;
 
 import org.springframework.data.domain.Pageable;
 import reactor.core.publisher.Mono;
-import rent.vehicle.dashboardserviceapi.device.config.CustomPage;
+import rent.vehicle.dashboardserviceapi.config.CustomPage;
 import rent.vehicle.dto.ListVehiclesRequest;
 import rent.vehicle.dto.PointFromLatLonDto;
 import rent.vehicle.dto.VehicleCreateUpdateDto;
