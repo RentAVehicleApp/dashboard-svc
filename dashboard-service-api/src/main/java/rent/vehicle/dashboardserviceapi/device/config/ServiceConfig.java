@@ -49,9 +49,6 @@ public class ServiceConfig {
     public WebClient deviceWebClient() {
         return WebClient.builder()
                 .baseUrl("https://device-service-production.up.railway.app")
-                .defaultCookie("cookieKey", "cookieValue")
-                .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-                .defaultUriVariables(Collections.singletonMap("url", "http://localhost:8080"))
                 .build();
     }
 
