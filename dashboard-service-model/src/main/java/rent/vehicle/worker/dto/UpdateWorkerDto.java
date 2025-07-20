@@ -1,7 +1,8 @@
-package rent.vehicle.dto;
+package rent.vehicle.worker.dto;
 
 import lombok.Getter;
 import lombok.Setter;
+import rent.vehicle.ticket.dto.CreateTicketDto;
 
 import java.util.Set;
 @Setter

@@ -1,30 +1,18 @@
 package rent.vehicle.dashboardserviceapi.service;
 
 import reactor.core.publisher.Mono;
-import rent.vehicle.dto.*;
+import rent.vehicle.customer.dto.CreateCustomerDto;
+import rent.vehicle.customer.dto.CustomerResponse;
+import rent.vehicle.customer.dto.UpdateCustomerDto;
+import rent.vehicle.ticket.dto.CreateTicketDto;
+import rent.vehicle.ticket.dto.ResponseTicketDto;
+import rent.vehicle.ticket.dto.UpdateTicketDto;
+import rent.vehicle.worker.dto.CreateWorkerDto;
+import rent.vehicle.worker.dto.ResponseWorkerDto;
+import rent.vehicle.worker.dto.UpdateWorkerDto;
 
 public interface DashboardService {
-    Mono<ResponseWorkerDto> createWorker(CreateWorkerDto createWorkerDto);
 
-    Mono<ResponseWorkerDto> updateWorker(Long id, UpdateWorkerDto updateWorkerDto);
 
-    Mono<ResponseWorkerDto> findWorker(Long id);
 
-    Mono<Boolean> removeWorker(Long id);
-
-    Mono<ResponseTicketDto> createTicket(CreateTicketDto createTicketDto);
-
-    Mono<ResponseTicketDto> updateTicket(Long id, UpdateTicketDto updateTicketDto);
-
-    Mono<ResponseTicketDto> findTicket(Long id);
-
-    Mono<Boolean> removeTicket(Long id);
-
-    Mono<CustomerResponse> createCustomer(CreateCustomerDto createCustomerDto);
-
-    Mono<CustomerResponse> getCustomer(Long userId);
-
-    Mono<CustomerResponse> updateCustomer(Long userId, UpdateCustomerDto updateCustomerDto);
-
-    Mono<CustomerResponse> removeCustomer(Long userId);
 }

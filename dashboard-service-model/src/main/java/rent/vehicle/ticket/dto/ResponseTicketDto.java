@@ -1,8 +1,9 @@
-package rent.vehicle.dto;
+package rent.vehicle.ticket.dto;
 
 import lombok.Getter;
 import lombok.Setter;
-import rent.vehicle.enums.TicketStatus;
+import rent.vehicle.worker.dto.ResponseWorkerDto;
+import rent.vehicle.ticket.enums.TicketStatus;
 
 @Setter
 @Getter

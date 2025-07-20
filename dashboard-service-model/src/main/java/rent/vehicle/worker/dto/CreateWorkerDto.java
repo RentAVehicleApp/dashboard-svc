@@ -1,4 +1,4 @@
-package rent.vehicle.dto;
+package rent.vehicle.worker.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

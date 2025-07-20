@@ -1,12 +1,12 @@
-package rent.vehicle.dto;
+package rent.vehicle.customer.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import rent.vehicle.enums.CustomerLicenseType;
-import rent.vehicle.enums.CustomerRole;
-import rent.vehicle.enums.CustomerStatus;
+import rent.vehicle.customer.enums.CustomerLicenseType;
+import rent.vehicle.customer.enums.CustomerRole;
+import rent.vehicle.customer.enums.CustomerStatus;
 
 import java.time.Instant;
 import java.time.LocalDate;

@@ -1,4 +1,4 @@
-package rent.vehicle.enums;
+package rent.vehicle.customer.enums;
 
 public enum CustomerStatus {
     ACTIVE,

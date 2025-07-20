@@ -1,8 +1,8 @@
-package rent.vehicle.dto;
+package rent.vehicle.ticket.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import rent.vehicle.enums.TicketStatus;
+import rent.vehicle.ticket.enums.TicketStatus;
 
 
 import java.time.Instant;

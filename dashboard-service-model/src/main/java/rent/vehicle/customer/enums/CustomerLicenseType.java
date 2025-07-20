@@ -1,4 +1,4 @@
-package rent.vehicle.enums;
+package rent.vehicle.customer.enums;
 
 public enum CustomerLicenseType {
     NONE, // e-байк ≤250 Вт/25 км/ч — без лицензии
