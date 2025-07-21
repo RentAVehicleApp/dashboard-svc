@@ -3,7 +3,6 @@ package rent.vehicle.dashboardserviceapi.service.customer_service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -82,14 +81,14 @@ public class CustomerDashboardServiceImpl implements CustomerDashboardService {
     }
 
     @Override
-    public Mono<CustomPage<CustomerResponse>> searchCustomers(Object simpleRequest) {
-        GenericSearchRequest searchRequest = searchAdapterService
-                .convertToGenericSearchRequest(simpleRequest);
+    public Mono<CustomPage<CustomerResponse>> searchCustomers(GenericSearchRequest genericSearchRequest) {
+       MultiValueMap<String,String> queryParams = QueryParamUtil.convertToQueryParams(genericSearchRequest,null);
         return customerServiceWebClient
-                .post()
-                .uri("/api/v1/users/search")
-                .contentType(MediaType.APPLICATION_JSON)
-                .bodyValue(searchRequest)
+                .get()
+                .uri(uriBuilder ->uriBuilder
+                        .path("/api/v1/users/search")
+                        .queryParams(queryParams)
+                        .build())
                 .retrieve()
                 .bodyToMono(new ParameterizedTypeReference<CustomPage<CustomerResponse>>(){});
     }

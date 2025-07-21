@@ -2,6 +2,7 @@ package rent.vehicle.dashboardserviceapi.service.worker_service;
 
 import reactor.core.publisher.Mono;
 import rent.vehicle.common.CustomPage;
+import rent.vehicle.specification.dto.GenericSearchRequest;
 import rent.vehicle.worker.dto.CreateWorkerDto;
 import rent.vehicle.worker.dto.ResponseWorkerDto;
 import rent.vehicle.worker.dto.UpdateWorkerDto;
@@ -19,6 +20,6 @@ public interface WorkerDashboardService {
 
     Mono<CustomPage<ResponseWorkerDto>> getAll(Pageable pageable);
 
-    Mono<CustomPage<ResponseWorkerDto>> searchWorkers(Object simpleRequest);
+    Mono<CustomPage<ResponseWorkerDto>> searchWorkers(GenericSearchRequest genericSearchRequest);
 
 }

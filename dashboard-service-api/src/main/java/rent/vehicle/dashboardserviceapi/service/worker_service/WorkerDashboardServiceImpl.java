@@ -5,6 +5,7 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
+import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
@@ -27,7 +28,7 @@ public class WorkerDashboardServiceImpl implements WorkerDashboardService {
     public Mono<ResponseWorkerDto> createWorker(CreateWorkerDto createWorkerDto) {
         return workerServiceWebClient
                 .post()
-                .uri("/api/workers")
+                .uri("/api/v1/worker")
                 .bodyValue(createWorkerDto)
                 .retrieve()
                 .bodyToMono(ResponseWorkerDto.class);
@@ -37,7 +38,7 @@ public class WorkerDashboardServiceImpl implements WorkerDashboardService {
     public Mono<ResponseWorkerDto> updateWorker(Long id, UpdateWorkerDto updateWorkerDto) {
         return workerServiceWebClient
                 .post()
-                .uri("/api/workers/supporter/{id}/update", id)
+                .uri("/api/v1/worker/supporter/{id}/update", id)
                 .bodyValue(updateWorkerDto)
                 .retrieve()
                 .bodyToMono(ResponseWorkerDto.class);
@@ -48,7 +49,7 @@ public class WorkerDashboardServiceImpl implements WorkerDashboardService {
     public Mono<ResponseWorkerDto> findWorker(Long id) {
         return workerServiceWebClient
                 .get()
-                .uri("/api/workers/supporter/{id}", id)
+                .uri("/api/v1/worker/supporter/{id}", id)
                 .retrieve()
                 .bodyToMono(ResponseWorkerDto.class);
 
@@ -58,7 +59,7 @@ public class WorkerDashboardServiceImpl implements WorkerDashboardService {
     public Mono<Boolean> removeWorker(Long id) {
         return workerServiceWebClient
                 .delete()
-                .uri("/api/workers/supporter/{id}", id)
+                .uri("/api/v1/worker/supporter/{id}", id)
                 .retrieve()
                 .bodyToMono(Boolean.class);
 
@@ -71,7 +72,7 @@ public class WorkerDashboardServiceImpl implements WorkerDashboardService {
         return workerServiceWebClient
                 .get()
                 .uri(uriBuilder ->uriBuilder
-                        .path("/api/v1/users/all")
+                        .path("/api/v1/worker/workers")
                         .queryParams(queryParams)
                         .build())
                 .retrieve()
@@ -79,14 +80,15 @@ public class WorkerDashboardServiceImpl implements WorkerDashboardService {
     }
 
     @Override
-    public Mono<CustomPage<ResponseWorkerDto>> searchWorkers(Object simpleRequest) {
-        GenericSearchRequest searchRequest = workerAdapterService
-                .convertToGenericSearchRequest(simpleRequest);
+    public Mono<CustomPage<ResponseWorkerDto>> searchWorkers(GenericSearchRequest genericSearchRequest) {
+        MultiValueMap<String, String> queryParams = QueryParamUtil.convertToQueryParams(genericSearchRequest,null);
+
         return workerServiceWebClient
-                .post()
-                .uri("/api/v1/users/search")
-                .contentType(MediaType.APPLICATION_JSON)
-                .bodyValue(searchRequest)
+                .get()
+                .uri(uriBuilder ->uriBuilder
+                        .path("/api/v1/worker/workers")
+                        .queryParams(queryParams)
+                        .build())
                 .retrieve()
                 .bodyToMono(new ParameterizedTypeReference<CustomPage<ResponseWorkerDto>>(){});
     }

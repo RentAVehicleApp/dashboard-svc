@@ -6,6 +6,7 @@ import rent.vehicle.common.CustomPage;
 import rent.vehicle.customer.dto.CreateCustomerDto;
 import rent.vehicle.customer.dto.CustomerResponse;
 import rent.vehicle.customer.dto.UpdateCustomerDto;
+import rent.vehicle.specification.dto.GenericSearchRequest;
 
 
 public interface CustomerDashboardService {
@@ -19,5 +20,5 @@ public interface CustomerDashboardService {
 
     Mono<CustomPage<CustomerResponse>> getAll(Pageable pageable);
 
-    Mono<CustomPage<CustomerResponse>> searchCustomers(Object simpleRequest);
+    Mono<CustomPage<CustomerResponse>> searchCustomers(GenericSearchRequest genericSearchRequest);
 }

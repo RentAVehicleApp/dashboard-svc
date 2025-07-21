@@ -12,6 +12,7 @@ import rent.vehicle.customer.dto.UpdateCustomerDto;
 import rent.vehicle.dashboardserviceapi.service.customer_service.CustomerDashboardService;
 import rent.vehicle.dashboardserviceapi.service.ticket_service.TicketDashboardService;
 import rent.vehicle.dashboardserviceapi.service.worker_service.WorkerDashboardService;
+import rent.vehicle.specification.dto.GenericSearchRequest;
 import rent.vehicle.ticket.dto.CreateTicketDto;
 import rent.vehicle.ticket.dto.ResponseTicketDto;
 import rent.vehicle.ticket.dto.UpdateTicketDto;
@@ -114,17 +115,17 @@ public class DashboardController {
         return customerDashboardService.getAll(pageable);
     }
     @GetMapping("/workers/search")
-    public Mono<CustomPage<ResponseWorkerDto>> searchWorkersByParams(Object simpleRequest) {
-        return workerDashboardService.searchWorkers(simpleRequest);
+    public Mono<CustomPage<ResponseWorkerDto>> searchWorkersByParams(@ModelAttribute GenericSearchRequest genericSearchRequest) {
+        return workerDashboardService.searchWorkers(genericSearchRequest);
     }
 
     @GetMapping("/tickets/search")
-    public Mono<CustomPage<ResponseTicketDto>> searchTicketsByParams(Object simpleRequest) {
-        return ticketDashboardService.searchTickets(simpleRequest);
+    public Mono<CustomPage<ResponseTicketDto>> searchTicketsByParams(@ModelAttribute GenericSearchRequest genericSearchRequest) {
+        return ticketDashboardService.searchTickets(genericSearchRequest);
     }
     @GetMapping("/customers/search")
-        public Mono<CustomPage<CustomerResponse>> searchCustomersByParams(Object simpleRequest){
-            return customerDashboardService.searchCustomers(simpleRequest);
+        public Mono<CustomPage<CustomerResponse>> searchCustomersByParams(@ModelAttribute GenericSearchRequest genericSearchRequest){
+            return customerDashboardService.searchCustomers(genericSearchRequest);
         }
 
 }

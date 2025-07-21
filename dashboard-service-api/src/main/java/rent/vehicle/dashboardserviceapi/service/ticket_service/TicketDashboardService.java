@@ -2,6 +2,7 @@ package rent.vehicle.dashboardserviceapi.service.ticket_service;
 
 import reactor.core.publisher.Mono;
 import rent.vehicle.common.CustomPage;
+import rent.vehicle.specification.dto.GenericSearchRequest;
 import rent.vehicle.ticket.dto.CreateTicketDto;
 import rent.vehicle.ticket.dto.ResponseTicketDto;
 import rent.vehicle.ticket.dto.UpdateTicketDto;
@@ -19,5 +20,5 @@ public interface TicketDashboardService {
 
     Mono<CustomPage<ResponseTicketDto>> getAll(Pageable pageable);
 
-    Mono<CustomPage<ResponseTicketDto>> searchTickets(Object simpleRequest);
+    Mono<CustomPage<ResponseTicketDto>> searchTickets(GenericSearchRequest genericSearchRequest);
 }
