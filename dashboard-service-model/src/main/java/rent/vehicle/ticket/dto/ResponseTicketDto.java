@@ -1,0 +1,18 @@
+package rent.vehicle.ticket.dto;
+
+import lombok.Getter;
+import lombok.Setter;
+import rent.vehicle.worker.dto.ResponseWorkerDto;
+import rent.vehicle.ticket.enums.TicketStatus;
+
+@Setter
+@Getter
+public class ResponseTicketDto {
+    private Long id;
+    private String createdByUserId;
+    private String createdByUserName;
+    private String header;
+    private String problem;
+    private TicketStatus status;
+    private ResponseWorkerDto assignedTo;
+}
