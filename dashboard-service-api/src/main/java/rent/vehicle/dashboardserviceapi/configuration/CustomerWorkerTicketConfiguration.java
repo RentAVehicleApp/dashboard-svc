@@ -15,13 +15,13 @@ public class CustomerWorkerTicketConfiguration {
     @Bean
     public WebClient customerServiceWebClient() {
         return WebClient.builder()
-                .baseUrl("https://user-service-production-94d1.up.railway.app")
+                .baseUrl("https://user-service-xt20.onrender.com")
                 .build();
     }
     @Bean
     public WebClient workerServiceWebClient() {
         return WebClient.builder()
-                .baseUrl("https://worker-service-production-c476.up.railway.app")
+                .baseUrl("https://worker-service-c4g6.onrender.com")
                 .build();
     }
 
