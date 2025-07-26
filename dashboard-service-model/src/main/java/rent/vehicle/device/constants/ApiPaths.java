@@ -1,4 +1,4 @@
-package rent.vehicle.constants;
+package rent.vehicle.device.constants;
 
 public enum ApiPaths {
     ;

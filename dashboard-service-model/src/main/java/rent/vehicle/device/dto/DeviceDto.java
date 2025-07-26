@@ -1,8 +1,8 @@
-package rent.vehicle.dto;
+package rent.vehicle.device.dto;
 
 import lombok.*;
-import rent.vehicle.enums.ConnectionStatus;
-import rent.vehicle.enums.DeviceModel;
+import rent.vehicle.device.enums.ConnectionStatus;
+import rent.vehicle.device.enums.DeviceModel;
 
 @Getter
 @Setter

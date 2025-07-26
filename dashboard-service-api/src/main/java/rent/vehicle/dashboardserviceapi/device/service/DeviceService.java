@@ -3,9 +3,9 @@ package rent.vehicle.dashboardserviceapi.device.service;
 import org.springframework.data.domain.Pageable;
 import reactor.core.publisher.Mono;
 import rent.vehicle.dashboardserviceapi.device.config.CustomPage;
-import rent.vehicle.dto.DeviceCreateUpdateDto;
-import rent.vehicle.dto.DeviceDto;
-import rent.vehicle.dto.ListDevicesRequest;
+import rent.vehicle.device.dto.DeviceCreateUpdateDto;
+import rent.vehicle.device.dto.DeviceDto;
+import rent.vehicle.device.dto.ListDevicesRequest;
 
 public interface DeviceService {
     Mono<DeviceDto> createDevice(DeviceCreateUpdateDto deviceCreateUpdateDto);

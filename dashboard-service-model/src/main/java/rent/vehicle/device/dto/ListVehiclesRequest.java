@@ -1,8 +1,8 @@
-package rent.vehicle.dto;
+package rent.vehicle.device.dto;
 
 import lombok.*;
-import rent.vehicle.enums.Availability;
-import rent.vehicle.enums.VehicleModel;
+import rent.vehicle.device.enums.Availability;
+import rent.vehicle.device.enums.VehicleModel;
 
 import java.util.Set;
 

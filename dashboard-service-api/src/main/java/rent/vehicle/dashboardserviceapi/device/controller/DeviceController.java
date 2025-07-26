@@ -5,13 +5,12 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
-import rent.vehicle.constants.ApiPaths;
+import rent.vehicle.device.constants.ApiPaths;
 import rent.vehicle.dashboardserviceapi.device.config.CustomPage;
-import rent.vehicle.dashboardserviceapi.device.service.DeviceConfigService;
 import rent.vehicle.dashboardserviceapi.device.service.DeviceService;
-import rent.vehicle.dto.DeviceCreateUpdateDto;
-import rent.vehicle.dto.DeviceDto;
-import rent.vehicle.dto.ListDevicesRequest;
+import rent.vehicle.device.dto.DeviceCreateUpdateDto;
+import rent.vehicle.device.dto.DeviceDto;
+import rent.vehicle.device.dto.ListDevicesRequest;
 
 @RestController
 @RequiredArgsConstructor

@@ -7,12 +7,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
-import rent.vehicle.constants.ApiPaths;
+import rent.vehicle.device.constants.ApiPaths;
 import rent.vehicle.dashboardserviceapi.device.config.CustomPage;
 import rent.vehicle.dashboardserviceapi.device.config.QueryParamUtil;
-import rent.vehicle.dto.DeviceCreateUpdateDto;
-import rent.vehicle.dto.DeviceDto;
-import rent.vehicle.dto.ListDevicesRequest;
+import rent.vehicle.device.dto.DeviceCreateUpdateDto;
+import rent.vehicle.device.dto.DeviceDto;
+import rent.vehicle.device.dto.ListDevicesRequest;
 
 @Service
 @RequiredArgsConstructor

@@ -3,8 +3,8 @@ package rent.vehicle.dashboardserviceapi.device.config;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import rent.vehicle.exception.EntityNotFoundException;
-import rent.vehicle.exception.RelatedEntityInUseException;
+import rent.vehicle.device.exception.EntityNotFoundException;
+import rent.vehicle.device.exception.RelatedEntityInUseException;
 
 @RestControllerAdvice
 public class ExceptionHandler {

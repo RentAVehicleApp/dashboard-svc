@@ -1,4 +1,4 @@
-package rent.vehicle.dto;
+package rent.vehicle.device.dto;
 
 import lombok.*;
 

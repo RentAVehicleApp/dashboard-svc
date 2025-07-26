@@ -3,10 +3,10 @@ package rent.vehicle.dashboardserviceapi.device.service;
 import org.springframework.data.domain.Pageable;
 import reactor.core.publisher.Mono;
 import rent.vehicle.dashboardserviceapi.device.config.CustomPage;
-import rent.vehicle.dto.ListVehiclesRequest;
-import rent.vehicle.dto.PointFromLatLonDto;
-import rent.vehicle.dto.VehicleCreateUpdateDto;
-import rent.vehicle.dto.VehicleDto;
+import rent.vehicle.device.dto.ListVehiclesRequest;
+import rent.vehicle.device.dto.PointFromLatLonDto;
+import rent.vehicle.device.dto.VehicleCreateUpdateDto;
+import rent.vehicle.device.dto.VehicleDto;
 
 public interface VehicleService {
     Mono<VehicleDto> createVehicle(VehicleCreateUpdateDto vehicleCreateUpdateDto);

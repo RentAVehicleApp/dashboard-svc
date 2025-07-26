@@ -1,4 +1,4 @@
-package rent.vehicle.exception;
+package rent.vehicle.device.exception;
 
 public class DuplicateDeviceException extends RuntimeException {
     public DuplicateDeviceException(String message) {

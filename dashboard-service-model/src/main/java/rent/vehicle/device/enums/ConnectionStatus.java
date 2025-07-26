@@ -1,4 +1,4 @@
-package rent.vehicle.enums;
+package rent.vehicle.device.enums;
 
 public enum ConnectionStatus {
     CONNECTED,

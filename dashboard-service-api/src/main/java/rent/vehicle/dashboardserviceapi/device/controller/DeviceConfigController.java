@@ -2,15 +2,14 @@ package rent.vehicle.dashboardserviceapi.device.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
-import rent.vehicle.constants.ApiPaths;
+import rent.vehicle.device.constants.ApiPaths;
 import rent.vehicle.dashboardserviceapi.device.config.CustomPage;
 import rent.vehicle.dashboardserviceapi.device.service.DeviceConfigService;
-import rent.vehicle.dto.DeviceConfigCreateUpdateDto;
-import rent.vehicle.dto.DeviceConfigDto;
-import rent.vehicle.dto.ListDeviceConfigsRequest;
+import rent.vehicle.device.dto.DeviceConfigCreateUpdateDto;
+import rent.vehicle.device.dto.DeviceConfigDto;
+import rent.vehicle.device.dto.ListDeviceConfigsRequest;
 
 @RestController
 @RequiredArgsConstructor
