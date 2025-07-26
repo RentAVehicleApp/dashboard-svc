@@ -6,7 +6,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 import rent.vehicle.device.constants.ApiPaths;
-import rent.vehicle.dashboardserviceapi.device.config.CustomPage;
+import rent.vehicle.dashboardserviceapi.common_config.CustomPage;
 import rent.vehicle.dashboardserviceapi.device.service.VehicleService;
 import rent.vehicle.device.dto.PointFromLatLonDto;
 import rent.vehicle.device.dto.VehicleCreateUpdateDto;

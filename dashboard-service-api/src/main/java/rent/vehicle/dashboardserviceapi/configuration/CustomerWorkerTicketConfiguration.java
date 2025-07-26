@@ -12,43 +12,44 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class CustomerWorkerTicketConfiguration {
 
-    @Bean
-    public WebClient customerServiceWebClient() {
-        return WebClient.builder()
-                .baseUrl("https://user-service-xt20.onrender.com")
-                .build();
-    }
-    @Bean
-    public WebClient workerServiceWebClient() {
-        return WebClient.builder()
-                .baseUrl("https://worker-service-c4g6.onrender.com")
-                .build();
-    }
+//    @Bean
+//    public WebClient customerServiceWebClient() {
+//        return WebClient.builder()
+//                .baseUrl("https://user-service-xt20.onrender.com")
+//                .build();
+//    }
+//    @Bean
+//    public WebClient workerServiceWebClient() {
+//        return WebClient.builder()
+//                .baseUrl("https://worker-service-c4g6.onrender.com")
+//                .build();
+//    }
 
-    @Bean
-    ModelMapper modelMapper() {
-        ModelMapper modelMapper = new ModelMapper();
-        modelMapper.getConfiguration()
-                .setFieldMatchingEnabled(true)
-                .setFieldAccessLevel(org.modelmapper.config.Configuration.AccessLevel.PRIVATE)
-                .setMatchingStrategy(MatchingStrategies.STRICT);
+    // TODO delete if don't need
+//    @Bean
+//    ModelMapper modelMapper() {
+//        ModelMapper modelMapper = new ModelMapper();
+//        modelMapper.getConfiguration()
+//                .setFieldMatchingEnabled(true)
+//                .setFieldAccessLevel(org.modelmapper.config.Configuration.AccessLevel.PRIVATE)
+//                .setMatchingStrategy(MatchingStrategies.STRICT);
+//
+//        return modelMapper;
+//    }
 
-        return modelMapper;
-    }
-
-    @Bean
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurer() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**")
-                        .allowedOriginPatterns("*") // Разрешить ВСЕ домены
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                        .allowedHeaders("*")
-                        .allowCredentials(true);
-            }
-        };
-    }
+//    @Bean
+//    public WebMvcConfigurer corsConfigurer() {
+//        return new WebMvcConfigurer() {
+//            @Override
+//            public void addCorsMappings(CorsRegistry registry) {
+//                registry.addMapping("/**")
+//                        .allowedOriginPatterns("*") // Разрешить ВСЕ домены
+//                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+//                        .allowedHeaders("*")
+//                        .allowCredentials(true);
+//            }
+//        };
+//    }
 
 
 }

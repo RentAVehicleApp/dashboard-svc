@@ -8,8 +8,8 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 import rent.vehicle.device.constants.ApiPaths;
-import rent.vehicle.dashboardserviceapi.device.config.CustomPage;
-import rent.vehicle.dashboardserviceapi.device.config.QueryParamUtil;
+import rent.vehicle.dashboardserviceapi.common_config.CustomPage;
+import rent.vehicle.dashboardserviceapi.common_config.QueryParamUtil;
 import rent.vehicle.device.dto.DeviceCreateUpdateDto;
 import rent.vehicle.device.dto.DeviceDto;
 import rent.vehicle.device.dto.ListDevicesRequest;
@@ -17,11 +17,12 @@ import rent.vehicle.device.dto.ListDevicesRequest;
 @Service
 @RequiredArgsConstructor
 public class DeviceServiceImpl implements DeviceService{
-    private final WebClient webClient;
+
+    private final WebClient deviceWebClient;
 
     @Override
     public Mono<DeviceDto> createDevice(DeviceCreateUpdateDto deviceCreateUpdateDto) {
-        return webClient.post()
+        return deviceWebClient.post()
                 .uri(ApiPaths.PATH_DEVICE)
                 .bodyValue(deviceCreateUpdateDto)
                 .retrieve()
@@ -30,7 +31,7 @@ public class DeviceServiceImpl implements DeviceService{
 
     @Override
     public Mono<DeviceDto> updateDevice(long id, DeviceCreateUpdateDto deviceCreateUpdateDto) {
-        return webClient.put()
+        return deviceWebClient.put()
                 .uri(ApiPaths.PATH_DEVICE + ApiPaths.PATH_ID, id)
                 .bodyValue(deviceCreateUpdateDto)
                 .retrieve()
@@ -39,7 +40,7 @@ public class DeviceServiceImpl implements DeviceService{
 
     @Override
     public Mono<DeviceDto> findDeviceById(long id) {
-        return webClient.get()
+        return deviceWebClient.get()
                 .uri(ApiPaths.PATH_DEVICE + ApiPaths.PATH_ID, id)
                 .retrieve()
                 .bodyToMono(DeviceDto.class);
@@ -49,7 +50,7 @@ public class DeviceServiceImpl implements DeviceService{
     public Mono<CustomPage<DeviceDto>> findAllDevices(Pageable pageable) {
         MultiValueMap<String, String> queryParams = QueryParamUtil.convertToQueryParams(null, pageable);
 
-        return webClient.get()
+        return deviceWebClient.get()
                 .uri(uriBuilder -> uriBuilder
                         .path(ApiPaths.PATH_DEVICE + ApiPaths.PATH_LIST)
                         .queryParams(queryParams)
@@ -63,7 +64,7 @@ public class DeviceServiceImpl implements DeviceService{
     public Mono<CustomPage<DeviceDto>> findListDevicesByParam(ListDevicesRequest listDevicesRequest, Pageable pageable) {
         MultiValueMap<String, String> queryParams = QueryParamUtil.convertToQueryParams(listDevicesRequest, pageable);
 
-        return webClient.get()
+        return deviceWebClient.get()
                 .uri(uriBuilder -> uriBuilder
                         .path(ApiPaths.PATH_DEVICE + ApiPaths.PATH_SEARCH)
                         .queryParams(queryParams)
@@ -77,7 +78,7 @@ public class DeviceServiceImpl implements DeviceService{
     public Mono<CustomPage<DeviceDto>> findDevicesWithoutVehicle(Pageable pageable) {
         MultiValueMap<String, String> queryParams = QueryParamUtil.convertToQueryParams(null, pageable);
 
-        return webClient.get()
+        return deviceWebClient.get()
                 .uri(uriBuilder -> uriBuilder
                         .path(ApiPaths.PATH_DEVICE + ApiPaths.WITHOUT_VEHICLE)
                         .queryParams(queryParams)
@@ -89,7 +90,7 @@ public class DeviceServiceImpl implements DeviceService{
 
     @Override
     public Mono<Void> removeDevice(long id) {
-        return webClient.delete()
+        return deviceWebClient.delete()
                 .uri(ApiPaths.PATH_DEVICE + ApiPaths.PATH_ID, id)
                 .retrieve()
                 .bodyToMono(Void.class);

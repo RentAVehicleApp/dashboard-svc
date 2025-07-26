@@ -3,21 +3,20 @@ package rent.vehicle.dashboardserviceapi.service.worker_service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
-import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
-import rent.vehicle.common.CustomPage;
-import rent.vehicle.dashboardserviceapi.configuration.QueryParamUtil;
-import rent.vehicle.dashboardserviceapi.service.DashboardService;
+import rent.vehicle.dashboardserviceapi.common_config.CustomPage;
 import rent.vehicle.dashboardserviceapi.service.adapter.SearchAdapterService;
 import rent.vehicle.specification.dto.GenericSearchRequest;
-import rent.vehicle.ticket.dto.ResponseTicketDto;
 import rent.vehicle.worker.dto.CreateWorkerDto;
 import rent.vehicle.worker.dto.ResponseWorkerDto;
 import rent.vehicle.worker.dto.UpdateWorkerDto;
+import rent.vehicle.dashboardserviceapi.common_config.QueryParamUtil;
+
+
+
 @Service
 @RequiredArgsConstructor
 public class WorkerDashboardServiceImpl implements WorkerDashboardService {

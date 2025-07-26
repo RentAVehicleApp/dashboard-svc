@@ -1,7 +1,7 @@
 package rent.vehicle.dashboardserviceapi.service.ticket_service;
 
 import reactor.core.publisher.Mono;
-import rent.vehicle.common.CustomPage;
+import rent.vehicle.dashboardserviceapi.common_config.CustomPage;
 import rent.vehicle.specification.dto.GenericSearchRequest;
 import rent.vehicle.ticket.dto.CreateTicketDto;
 import rent.vehicle.ticket.dto.ResponseTicketDto;

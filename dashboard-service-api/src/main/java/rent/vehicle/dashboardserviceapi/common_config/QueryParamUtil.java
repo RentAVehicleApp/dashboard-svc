@@ -1,4 +1,4 @@
-package rent.vehicle.dashboardserviceapi.configuration;
+package rent.vehicle.dashboardserviceapi.common_config;
 
 import org.springframework.beans.BeanWrapperImpl;
 import org.springframework.data.domain.Pageable;

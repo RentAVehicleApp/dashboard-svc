@@ -1,4 +1,4 @@
-package rent.vehicle.dashboardserviceapi.device.config;
+package rent.vehicle.dashboardserviceapi.common_config;
 
 
 import org.modelmapper.ModelMapper;
@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-public class ServiceConfig {
+public class ServiceConfigCommon {
 
     @Bean
     ModelMapper modelMapper() {
@@ -38,10 +38,23 @@ public class ServiceConfig {
         };
     }
 
-    @Bean
+    @Bean ("deviceWebClient")
     public WebClient deviceWebClient() {
         return WebClient.builder()
                 .baseUrl("https://device-service.onrender.com")
+                .build();
+    }
+
+    @Bean ("customerServiceWebClient")
+    public WebClient customerServiceWebClient() {
+        return WebClient.builder()
+                .baseUrl("https://user-service-xt20.onrender.com")
+                .build();
+    }
+    @Bean ("workerServiceWebClient")
+    public WebClient workerServiceWebClient() {
+        return WebClient.builder()
+                .baseUrl("https://worker-service-c4g6.onrender.com")
                 .build();
     }
 
