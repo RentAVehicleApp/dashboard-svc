@@ -1,4 +1,4 @@
-package rent.vehicle.dashboardserviceapi.common_config;
+package rent.vehicle.dashboardserviceapi.common.config;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

@@ -3,13 +3,13 @@ package rent.vehicle.dashboardserviceapi.service.customer_service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.data.domain.Pageable;
-import rent.vehicle.dashboardserviceapi.common_config.QueryParamUtil;
+import rent.vehicle.dashboardserviceapi.common.config.QueryParamUtil;
 
 import org.springframework.stereotype.Service;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
-import rent.vehicle.dashboardserviceapi.common_config.CustomPage;
+import rent.vehicle.dashboardserviceapi.common.config.CustomPage;
 import rent.vehicle.customer.dto.CreateCustomerDto;
 import rent.vehicle.customer.dto.CustomerResponse;
 import rent.vehicle.customer.dto.UpdateCustomerDto;

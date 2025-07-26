@@ -5,7 +5,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
-import rent.vehicle.dashboardserviceapi.common_config.CustomPage;
+import rent.vehicle.dashboardserviceapi.common.config.CustomPage;
 import rent.vehicle.customer.dto.CreateCustomerDto;
 import rent.vehicle.customer.dto.CustomerResponse;
 import rent.vehicle.customer.dto.UpdateCustomerDto;

@@ -1,4 +1,4 @@
-package rent.vehicle.dashboardserviceapi.common_config;
+package rent.vehicle.dashboardserviceapi.common.config;
 
 
 import org.modelmapper.ModelMapper;

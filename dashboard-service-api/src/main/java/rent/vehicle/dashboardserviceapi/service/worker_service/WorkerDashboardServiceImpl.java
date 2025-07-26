@@ -7,13 +7,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
-import rent.vehicle.dashboardserviceapi.common_config.CustomPage;
+import rent.vehicle.dashboardserviceapi.common.config.CustomPage;
 import rent.vehicle.dashboardserviceapi.service.adapter.SearchAdapterService;
 import rent.vehicle.specification.dto.GenericSearchRequest;
 import rent.vehicle.worker.dto.CreateWorkerDto;
 import rent.vehicle.worker.dto.ResponseWorkerDto;
 import rent.vehicle.worker.dto.UpdateWorkerDto;
-import rent.vehicle.dashboardserviceapi.common_config.QueryParamUtil;
+import rent.vehicle.dashboardserviceapi.common.config.QueryParamUtil;
 
 
 

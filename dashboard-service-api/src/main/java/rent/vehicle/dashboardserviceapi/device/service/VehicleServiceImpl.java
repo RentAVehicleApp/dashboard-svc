@@ -1,7 +1,6 @@
 package rent.vehicle.dashboardserviceapi.device.service;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -9,8 +8,8 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 import rent.vehicle.device.constants.ApiPaths;
-import rent.vehicle.dashboardserviceapi.common_config.CustomPage;
-import rent.vehicle.dashboardserviceapi.common_config.QueryParamUtil;
+import rent.vehicle.dashboardserviceapi.common.config.CustomPage;
+import rent.vehicle.dashboardserviceapi.common.config.QueryParamUtil;
 import rent.vehicle.device.dto.ListVehiclesRequest;
 import rent.vehicle.device.dto.PointFromLatLonDto;
 import rent.vehicle.device.dto.VehicleCreateUpdateDto;
