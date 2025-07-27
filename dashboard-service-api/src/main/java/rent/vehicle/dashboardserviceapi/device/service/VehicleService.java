@@ -9,6 +9,7 @@ import rent.vehicle.device.dto.VehicleCreateUpdateDto;
 import rent.vehicle.device.dto.VehicleDto;
 
 public interface VehicleService {
+
     Mono<VehicleDto> createVehicle(VehicleCreateUpdateDto vehicleCreateUpdateDto);
 
     Mono<VehicleDto> updateVehicle(long id, VehicleCreateUpdateDto vehicleCreateUpdateDto);
@@ -22,4 +23,5 @@ public interface VehicleService {
     Mono<Void> removeVehicle(long id);
 
     Mono<CustomPage<VehicleDto>> findNearbyVehicles(PointFromLatLonDto pointFromLatLonDto, long radiusMeters, Pageable pageable);
+
 }

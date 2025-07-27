@@ -98,4 +98,6 @@ public class VehicleServiceImpl implements VehicleService{
                 .bodyToMono(new ParameterizedTypeReference<CustomPage<VehicleDto>>() {
                 });
     }
+
+
 }

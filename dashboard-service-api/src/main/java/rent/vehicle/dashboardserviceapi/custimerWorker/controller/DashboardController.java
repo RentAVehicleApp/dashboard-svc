@@ -1,4 +1,4 @@
-package rent.vehicle.dashboardserviceapi.controller;
+package rent.vehicle.dashboardserviceapi.custimerWorker.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
@@ -9,9 +9,9 @@ import rent.vehicle.dashboardserviceapi.common.config.CustomPage;
 import rent.vehicle.customer.dto.CreateCustomerDto;
 import rent.vehicle.customer.dto.CustomerResponse;
 import rent.vehicle.customer.dto.UpdateCustomerDto;
-import rent.vehicle.dashboardserviceapi.service.customer_service.CustomerDashboardService;
-import rent.vehicle.dashboardserviceapi.service.ticket_service.TicketDashboardService;
-import rent.vehicle.dashboardserviceapi.service.worker_service.WorkerDashboardService;
+import rent.vehicle.dashboardserviceapi.custimerWorker.service.customer_service.CustomerDashboardService;
+import rent.vehicle.dashboardserviceapi.custimerWorker.service.ticket_service.TicketDashboardService;
+import rent.vehicle.dashboardserviceapi.custimerWorker.service.worker_service.WorkerDashboardService;
 import rent.vehicle.specification.dto.GenericSearchRequest;
 import rent.vehicle.ticket.dto.CreateTicketDto;
 import rent.vehicle.ticket.dto.ResponseTicketDto;

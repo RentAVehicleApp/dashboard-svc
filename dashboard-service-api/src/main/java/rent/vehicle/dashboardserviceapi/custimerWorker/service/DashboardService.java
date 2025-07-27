@@ -1,4 +1,4 @@
-package rent.vehicle.dashboardserviceapi.service;
+package rent.vehicle.dashboardserviceapi.custimerWorker.service;
 
 import reactor.core.publisher.Mono;
 import rent.vehicle.customer.dto.CreateCustomerDto;

@@ -1,4 +1,4 @@
-package rent.vehicle.dashboardserviceapi.service.worker_service;
+package rent.vehicle.dashboardserviceapi.custimerWorker.service.worker_service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.ParameterizedTypeReference;
@@ -8,7 +8,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 import rent.vehicle.dashboardserviceapi.common.config.CustomPage;
-import rent.vehicle.dashboardserviceapi.service.adapter.SearchAdapterService;
+import rent.vehicle.dashboardserviceapi.custimerWorker.service.adapter.SearchAdapterService;
 import rent.vehicle.specification.dto.GenericSearchRequest;
 import rent.vehicle.worker.dto.CreateWorkerDto;
 import rent.vehicle.worker.dto.ResponseWorkerDto;

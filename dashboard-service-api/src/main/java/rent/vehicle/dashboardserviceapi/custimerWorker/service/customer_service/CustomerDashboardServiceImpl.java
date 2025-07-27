@@ -1,4 +1,4 @@
-package rent.vehicle.dashboardserviceapi.service.customer_service;
+package rent.vehicle.dashboardserviceapi.custimerWorker.service.customer_service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.ParameterizedTypeReference;
@@ -13,7 +13,7 @@ import rent.vehicle.dashboardserviceapi.common.config.CustomPage;
 import rent.vehicle.customer.dto.CreateCustomerDto;
 import rent.vehicle.customer.dto.CustomerResponse;
 import rent.vehicle.customer.dto.UpdateCustomerDto;
-import rent.vehicle.dashboardserviceapi.service.adapter.SearchAdapterService;
+import rent.vehicle.dashboardserviceapi.custimerWorker.service.adapter.SearchAdapterService;
 import rent.vehicle.specification.dto.GenericSearchRequest;
 
 

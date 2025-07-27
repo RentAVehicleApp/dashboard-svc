@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-public class ServiceConfigCommon {
+public class ServiceConfig {
 
     @Bean
     ModelMapper modelMapper() {
@@ -42,6 +42,7 @@ public class ServiceConfigCommon {
     public WebClient deviceWebClient() {
         return WebClient.builder()
                 .baseUrl("https://device-service.onrender.com")
+//                .baseUrl("http://localhost:8080")
                 .build();
     }
 

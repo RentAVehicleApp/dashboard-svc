@@ -1,4 +1,4 @@
-package rent.vehicle.dashboardserviceapi.service.ticket_service;
+package rent.vehicle.dashboardserviceapi.custimerWorker.service.ticket_service;
 
 import reactor.core.publisher.Mono;
 import rent.vehicle.dashboardserviceapi.common.config.CustomPage;

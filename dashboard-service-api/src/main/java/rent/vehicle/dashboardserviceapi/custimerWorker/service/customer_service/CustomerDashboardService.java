@@ -1,4 +1,4 @@
-package rent.vehicle.dashboardserviceapi.service.customer_service;
+package rent.vehicle.dashboardserviceapi.custimerWorker.service.customer_service;
 
 import org.springframework.data.domain.Pageable;
 import reactor.core.publisher.Mono;

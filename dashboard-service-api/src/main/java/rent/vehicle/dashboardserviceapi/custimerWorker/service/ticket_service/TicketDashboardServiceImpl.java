@@ -1,4 +1,4 @@
-package rent.vehicle.dashboardserviceapi.service.ticket_service;
+package rent.vehicle.dashboardserviceapi.custimerWorker.service.ticket_service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.ParameterizedTypeReference;
@@ -8,7 +8,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 import rent.vehicle.dashboardserviceapi.common.config.CustomPage;
 import rent.vehicle.dashboardserviceapi.common.config.QueryParamUtil;
-import rent.vehicle.dashboardserviceapi.service.adapter.SearchAdapterService;
+import rent.vehicle.dashboardserviceapi.custimerWorker.service.adapter.SearchAdapterService;
 import rent.vehicle.specification.dto.GenericSearchRequest;
 import rent.vehicle.ticket.dto.CreateTicketDto;
 import rent.vehicle.ticket.dto.ResponseTicketDto;

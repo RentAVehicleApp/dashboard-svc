@@ -1,4 +1,4 @@
-package rent.vehicle.dashboardserviceapi.service.adapter;
+package rent.vehicle.dashboardserviceapi.custimerWorker.service.adapter;
 
 import org.springframework.stereotype.Service;
 import rent.vehicle.specification.dto.GenericSearchRequest;
