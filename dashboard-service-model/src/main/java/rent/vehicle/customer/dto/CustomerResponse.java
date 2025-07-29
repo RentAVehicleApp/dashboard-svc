@@ -5,12 +5,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import rent.vehicle.customer.enums.CustomerLicenseType;
-import rent.vehicle.customer.enums.CustomerRole;
 import rent.vehicle.customer.enums.CustomerStatus;
-
 import java.time.Instant;
 import java.time.LocalDate;
-import java.util.List;
 
 @Data
 @Builder
@@ -28,5 +25,4 @@ public class CustomerResponse {
     private Instant createdAt;
     private Instant updatedAt;
     private CustomerStatus status; // Добавьте статус
-    private List<CustomerRole> roles; // Добавьте роли
 }
