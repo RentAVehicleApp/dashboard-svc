@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
+import rent.vehicle.device.constants.ApiPaths;
 
 @Service
 @RequiredArgsConstructor
@@ -30,7 +31,7 @@ public class KeepAliveServiceImpl implements KeepAliveService {
     @Override
     public String callCustomerService() {
         String answer =  customerServiceWebClient.get()
-                .uri(("/api/customers/1")) // 👈 корень
+                .uri(("api/v1/customer/health")) // 👈 корень
                 .retrieve()
                 .bodyToMono(String.class)
                 .block();
@@ -43,7 +44,7 @@ public class KeepAliveServiceImpl implements KeepAliveService {
     @Override
     public String callWorkerService() {
         String answer =  workerServiceWebClient.get()
-                .uri("/api/v1/workers/ticket/1") // 👈 корень
+                .uri("api/v1/worker/health") // 👈 корень
                 .retrieve()
                 .bodyToMono(String.class)
                 .block();
