@@ -4,8 +4,8 @@ import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
-import rent.vehicle.dashboardserviceapi.custimerWorker.service.customer_service.CustomerDashboardService;
-import rent.vehicle.dashboardserviceapi.custimerWorker.service.worker_service.WorkerDashboardService;
+import rent.vehicle.dashboardserviceapi.customer.customer_service.CustomerDashboardService;
+import rent.vehicle.dashboardserviceapi.worker.worker_service.WorkerDashboardService;
 import rent.vehicle.dashboardserviceapi.device.service.DeviceConfigService;
 
 @Service

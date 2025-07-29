@@ -1,4 +1,4 @@
-package rent.vehicle.dashboardserviceapi.custimerWorker.service.worker_service;
+package rent.vehicle.dashboardserviceapi.worker.worker_service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.ParameterizedTypeReference;
@@ -8,7 +8,6 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 import rent.vehicle.dashboardserviceapi.common.config.CustomPage;
-import rent.vehicle.dashboardserviceapi.custimerWorker.service.adapter.SearchAdapterService;
 import rent.vehicle.specification.dto.GenericSearchRequest;
 import rent.vehicle.worker.dto.CreateWorkerDto;
 import rent.vehicle.worker.dto.ResponseWorkerDto;
@@ -79,8 +78,8 @@ public class WorkerDashboardServiceImpl implements WorkerDashboardService {
     }
 
     @Override
-    public Mono<CustomPage<ResponseWorkerDto>> searchWorkers(GenericSearchRequest genericSearchRequest) {
-        MultiValueMap<String, String> queryParams = QueryParamUtil.convertToQueryParams(genericSearchRequest,null);
+    public Mono<CustomPage<ResponseWorkerDto>> searchWorkers(String filter, Pageable pageable) {
+        MultiValueMap<String, String> queryParams = QueryParamUtil.convertToQueryParams(filter,pageable);
 
         return workerServiceWebClient
                 .get()

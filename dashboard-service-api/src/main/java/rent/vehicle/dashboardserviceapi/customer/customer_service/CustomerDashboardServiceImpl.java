@@ -1,4 +1,4 @@
-package rent.vehicle.dashboardserviceapi.custimerWorker.service.customer_service;
+package rent.vehicle.dashboardserviceapi.customer.customer_service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.ParameterizedTypeReference;
@@ -13,8 +13,7 @@ import rent.vehicle.dashboardserviceapi.common.config.CustomPage;
 import rent.vehicle.customer.dto.CreateCustomerDto;
 import rent.vehicle.customer.dto.CustomerResponse;
 import rent.vehicle.customer.dto.UpdateCustomerDto;
-import rent.vehicle.dashboardserviceapi.custimerWorker.service.adapter.SearchAdapterService;
-import rent.vehicle.specification.dto.GenericSearchRequest;
+
 
 
 
@@ -23,7 +22,6 @@ import rent.vehicle.specification.dto.GenericSearchRequest;
 @RequiredArgsConstructor
 public class CustomerDashboardServiceImpl implements CustomerDashboardService {
     private final WebClient customerServiceWebClient;
-    private final SearchAdapterService searchAdapterService;
 
     // Ticket methods implementation
 
@@ -82,8 +80,8 @@ public class CustomerDashboardServiceImpl implements CustomerDashboardService {
     }
 
     @Override
-    public Mono<CustomPage<CustomerResponse>> searchCustomers(GenericSearchRequest genericSearchRequest) {
-       MultiValueMap<String,String> queryParams = QueryParamUtil.convertToQueryParams(genericSearchRequest,null);
+    public Mono<CustomPage<CustomerResponse>> searchCustomers(String filter, Pageable pageable) {
+       MultiValueMap<String,String> queryParams = QueryParamUtil.convertToQueryParams(filter,pageable);
         return customerServiceWebClient
                 .get()
                 .uri(uriBuilder ->uriBuilder

@@ -1,4 +1,4 @@
-package rent.vehicle.dashboardserviceapi.custimerWorker.service.customer_service;
+package rent.vehicle.dashboardserviceapi.customer.customer_service;
 
 import org.springframework.data.domain.Pageable;
 import reactor.core.publisher.Mono;
@@ -20,5 +20,5 @@ public interface CustomerDashboardService {
 
     Mono<CustomPage<CustomerResponse>> getAll(Pageable pageable);
 
-    Mono<CustomPage<CustomerResponse>> searchCustomers(GenericSearchRequest genericSearchRequest);
+    Mono<CustomPage<CustomerResponse>> searchCustomers(String filter, Pageable pageable);
 }

@@ -1,4 +1,4 @@
-package rent.vehicle.dashboardserviceapi.custimerWorker.service.ticket_service;
+package rent.vehicle.dashboardserviceapi.worker.worker_service.ticket_service;
 
 import reactor.core.publisher.Mono;
 import rent.vehicle.dashboardserviceapi.common.config.CustomPage;
@@ -20,5 +20,5 @@ public interface TicketDashboardService {
 
     Mono<CustomPage<ResponseTicketDto>> getAll(Pageable pageable);
 
-    Mono<CustomPage<ResponseTicketDto>> searchTickets(GenericSearchRequest genericSearchRequest);
+    Mono<CustomPage<ResponseTicketDto>> searchTickets(String filter, Pageable pageable);
 }

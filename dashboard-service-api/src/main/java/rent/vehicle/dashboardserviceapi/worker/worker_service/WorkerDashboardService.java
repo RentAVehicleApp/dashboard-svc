@@ -1,4 +1,4 @@
-package rent.vehicle.dashboardserviceapi.custimerWorker.service.worker_service;
+package rent.vehicle.dashboardserviceapi.worker.worker_service;
 
 import reactor.core.publisher.Mono;
 import rent.vehicle.dashboardserviceapi.common.config.CustomPage;
@@ -20,6 +20,6 @@ public interface WorkerDashboardService {
 
     Mono<CustomPage<ResponseWorkerDto>> getAll(Pageable pageable);
 
-    Mono<CustomPage<ResponseWorkerDto>> searchWorkers(GenericSearchRequest genericSearchRequest);
+    Mono<CustomPage<ResponseWorkerDto>> searchWorkers(String filter, Pageable pageable);
 
 }

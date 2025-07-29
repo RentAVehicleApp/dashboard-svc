@@ -3,7 +3,6 @@ package rent.vehicle.customer.dto;
 
 import lombok.Getter;
 import lombok.Setter;
-import rent.vehicle.customer.enums.CustomerLicenseType;
 
 import java.time.Instant;
 import java.time.LocalDate;
