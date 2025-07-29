@@ -6,7 +6,7 @@ import rent.vehicle.dashboardserviceapi.common.config.CustomPage;
 import rent.vehicle.customer.dto.CreateCustomerDto;
 import rent.vehicle.customer.dto.CustomerResponse;
 import rent.vehicle.customer.dto.UpdateCustomerDto;
-import rent.vehicle.specification.dto.GenericSearchRequest;
+
 
 
 public interface CustomerDashboardService {
