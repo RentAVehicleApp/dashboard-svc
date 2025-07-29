@@ -8,7 +8,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 import rent.vehicle.dashboardserviceapi.common.config.CustomPage;
 import rent.vehicle.dashboardserviceapi.common.config.QueryParamUtil;
-import rent.vehicle.specification.dto.GenericSearchRequest;
+
 import rent.vehicle.ticket.dto.CreateTicketDto;
 import rent.vehicle.ticket.dto.ResponseTicketDto;
 import rent.vehicle.ticket.dto.UpdateTicketDto;
@@ -19,7 +19,7 @@ import org.springframework.data.domain.Pageable;
 @RequiredArgsConstructor
 public class TicketDashboardServiceImpl implements  TicketDashboardService {
     private final WebClient workerServiceWebClient;
-    private final SearchAdapterService customerAdapterService;
+
 
     @Override
     public Mono<ResponseTicketDto> createTicket(CreateTicketDto createTicketDto) {
