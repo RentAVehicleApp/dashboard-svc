@@ -7,5 +7,6 @@ import java.util.Collection;
 public record WorkerAuthDto(
         Long id,
         String login,
+        String password,
         Collection<String> roles
 ) {}
