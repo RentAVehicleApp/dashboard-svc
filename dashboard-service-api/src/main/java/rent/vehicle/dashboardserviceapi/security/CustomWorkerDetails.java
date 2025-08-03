@@ -36,22 +36,9 @@ public record CustomWorkerDetails (WorkerAuthDto workerAuthDto) implements UserD
     }
 
     @Override
-    public boolean isAccountNonExpired() {
-        return workerAuthDto().active();
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return !workerAuthDto().blocked();
-    }
-
-    @Override
     public boolean isCredentialsNonExpired() {
         return true;
     }
 
-    @Override
-    public boolean isEnabled() {
-        return workerAuthDto.active();
-    }
+
 }
