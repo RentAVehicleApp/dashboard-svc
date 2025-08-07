@@ -11,20 +11,17 @@ public class QueryParamUtil {
 
     public static MultiValueMap<String, String> convertToQueryParams(Object obj, Pageable pageable) {
         MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<>();
-        BeanWrapperImpl beanWrapper = null;
-        if (obj instanceof String) {
-            queryParams.add("filter", (String) obj);
-        } else if (obj != null) {
-            beanWrapper = new BeanWrapperImpl(obj);
-        }
-        for (PropertyDescriptor pd : beanWrapper.getPropertyDescriptors()) {
-            String propertyName = pd.getName();
-            Object value = beanWrapper.getPropertyValue(propertyName);
-            if (value != null && !"class".equals(propertyName)) {
-                queryParams.add(propertyName, value.toString());
+        if (obj != null) {
+            BeanWrapperImpl beanWrapper = new BeanWrapperImpl(obj);
+
+            for (PropertyDescriptor pd : beanWrapper.getPropertyDescriptors()) {
+                String propertyName = pd.getName();
+                Object value = beanWrapper.getPropertyValue(propertyName);
+                if (value != null && !"class".equals(propertyName)) {
+                    queryParams.add(propertyName, value.toString());
+                }
             }
         }
-
 
         if (pageable != null) {
             queryParams.add("page", pageable.getPageNumber() + "");
