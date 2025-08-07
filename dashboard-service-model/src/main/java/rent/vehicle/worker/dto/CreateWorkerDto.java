@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Collection;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -12,4 +14,5 @@ import lombok.Setter;
 public class CreateWorkerDto {
     private String login;
     private String name;
+    private Collection<String> roles;
 }

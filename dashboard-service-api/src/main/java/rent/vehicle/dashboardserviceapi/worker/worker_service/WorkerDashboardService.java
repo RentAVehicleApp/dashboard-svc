@@ -7,6 +7,7 @@ import rent.vehicle.worker.dto.ResponseWorkerDto;
 import rent.vehicle.worker.dto.UpdateWorkerDto;
 
 import org.springframework.data.domain.Pageable;
+import rent.vehicle.worker.dto.WorkerAuthDto;
 
 public interface WorkerDashboardService {
     Mono<ResponseWorkerDto> createWorker(CreateWorkerDto createWorkerDto);
@@ -21,4 +22,5 @@ public interface WorkerDashboardService {
 
     Mono<CustomPage<ResponseWorkerDto>> searchWorkers(String filter, Pageable pageable);
 
+    Mono<WorkerAuthDto> findWorkerByLogin(String login);
 }

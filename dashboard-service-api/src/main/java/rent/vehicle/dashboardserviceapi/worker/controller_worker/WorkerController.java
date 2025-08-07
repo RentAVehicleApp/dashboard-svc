@@ -10,6 +10,7 @@ import rent.vehicle.dashboardserviceapi.worker.worker_service.WorkerDashboardSer
 import rent.vehicle.worker.dto.CreateWorkerDto;
 import rent.vehicle.worker.dto.ResponseWorkerDto;
 import rent.vehicle.worker.dto.UpdateWorkerDto;
+import rent.vehicle.worker.dto.WorkerAuthDto;
 
 @RestController
 @RequestMapping("/api/dashboard")
@@ -50,6 +51,10 @@ public class WorkerController {
     @GetMapping("/workers/search")
     public Mono<CustomPage<ResponseWorkerDto>> searchWorkersByParams( @RequestParam(required = false) String filter,Pageable pageable) {
         return workerDashboardService.searchWorkers(filter,pageable);
+    }
+    @GetMapping("/worker/login")
+    public Mono<WorkerAuthDto> login(String login) {
+        return workerDashboardService.findWorkerByLogin(login);
     }
 
 }

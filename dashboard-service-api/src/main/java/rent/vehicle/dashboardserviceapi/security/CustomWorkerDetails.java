@@ -27,7 +27,7 @@ public record CustomWorkerDetails (WorkerAuthDto workerAuthDto) implements UserD
 
     @Override
     public String getPassword() {
-        return "" ;
+        return workerAuthDto.password() ;
     }
 
     @Override
