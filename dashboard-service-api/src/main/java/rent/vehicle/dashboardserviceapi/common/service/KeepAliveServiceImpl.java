@@ -23,7 +23,7 @@ public class KeepAliveServiceImpl implements KeepAliveService {
                 .bodyToMono(String.class)
                 .block();
 
-        System.out.println("log: " + answer);
+        System.out.println("log device service: " + answer);
         return answer;
     }
 
@@ -36,7 +36,7 @@ public class KeepAliveServiceImpl implements KeepAliveService {
                 .bodyToMono(String.class)
                 .block();
 
-        System.out.println("log: " + answer);
+        System.out.println("log customer service: " + answer);
         return answer;
     }
 
@@ -49,7 +49,7 @@ public class KeepAliveServiceImpl implements KeepAliveService {
                 .bodyToMono(String.class)
                 .block();
 
-        System.out.println("log: " + answer);
+        System.out.println("log worker service: " + answer);
         return answer;
     }
 }

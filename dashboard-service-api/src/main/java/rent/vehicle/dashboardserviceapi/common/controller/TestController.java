@@ -14,8 +14,8 @@ public class TestController {
     public String testService() {
         StringBuilder answer = new StringBuilder();
         answer.append("log1: ").append(keepAliveService.callCustomerService());
-        answer.append("log2: ").append(keepAliveService.callWorkerService());
-        answer.append("log3: ").append(keepAliveService.callDeviceService());
+//        answer.append("log2: ").append(keepAliveService.callWorkerService());
+//        answer.append("log3: ").append(keepAliveService.callDeviceService());
 
         return answer.toString();
     }

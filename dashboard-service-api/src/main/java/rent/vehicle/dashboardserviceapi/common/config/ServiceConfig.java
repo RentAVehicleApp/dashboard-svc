@@ -38,7 +38,7 @@ public class ServiceConfig {
         };
     }
 
-    @Bean ("deviceWebClient")
+    @Bean
     public WebClient deviceWebClient() {
         return WebClient.builder()
                 .baseUrl("https://device-service.onrender.com")
@@ -46,13 +46,14 @@ public class ServiceConfig {
                 .build();
     }
 
-    @Bean ("customerServiceWebClient")
+    @Bean
     public WebClient customerServiceWebClient() {
         return WebClient.builder()
                 .baseUrl("https://user-service-xt20.onrender.com")
                 .build();
     }
-    @Bean ("workerServiceWebClient")
+
+    @Bean
     public WebClient workerServiceWebClient() {
         return WebClient.builder()
                 .baseUrl("https://worker-service-c4g6.onrender.com")
