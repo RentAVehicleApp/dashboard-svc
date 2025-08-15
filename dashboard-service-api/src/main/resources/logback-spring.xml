@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- Разрешаем использование Spring Boot конвертеров, включая %clr -->
+    <conversionRule conversionWord="clr"
+                    class="org.springframework.boot.logging.logback.ColorConverter" />
+    <conversionRule conversionWord="wex"
+                    class="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter" />
+    <conversionRule conversionWord="wEx"
+                    class="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter" />
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %clr(%d{HH:mm:ss.SSS}){faint}
+                %clr([%thread]){magenta}
+                %clr(%-5level){highlight}
+                %clr(%logger{36}){cyan} -
+                %clr(%msg){green}%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/app.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/app-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>7</maxHistory> <!-- хранить 7 дней -->
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d %-5level %logger - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <springProfile name="dev">
+        <root level="DEBUG">
+            <appender-ref ref="CONSOLE" />
+            <appender-ref ref="FILE" />
+        </root>
+
+        <logger name="rent.vehicle.dashboardserviceapi" level="DEBUG"/>
+        <logger name="org.springframework" level="INFO"/>
+        <logger name="org.apache.http" level="INFO"/>
+
+    </springProfile>
+
+    <springProfile name="prod">
+        <root level="INFO">
+            <appender-ref ref="CONSOLE" />
+            <appender-ref ref="FILE" />
+        </root>
+
+        <logger name="rent.vehicle.dashboardserviceapi" level="INFO"/>
+        <logger name="org.springframework" level="WARN"/>
+        <logger name="org.apache.http" level="WARN"/>
+
+    </springProfile>
+
+    <root level="DEBUG">
+        <appender-ref ref="CONSOLE" />
+    </root>
+</configuration>
