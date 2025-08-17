@@ -21,52 +21,51 @@ public class DeviceConfigController {
 
     @PostMapping
     public Mono<DeviceConfigDto> createDeviceConfig (@RequestBody DeviceConfigCreateUpdateDto deviceConfigCreateUpdateDto) {
-        log.info("Received request to CREATE device config: {}", deviceConfigCreateUpdateDto);
+        log.info("Request to create device config with data: {}", deviceConfigCreateUpdateDto);
         return deviceConfigService.createDeviceConfig(deviceConfigCreateUpdateDto)
-                .doOnSuccess(deviceConfigDto -> log.info("Successfully created device config: {}", deviceConfigDto))
-                .doOnError(e -> log.error("Error while creating device config", e));
+                .doOnSuccess(config -> log.info("Successfully created device config: {}", config))
+                .doOnError(e -> log.error("Error while creating device config with data: {}", deviceConfigCreateUpdateDto, e));
     }
 
     @PutMapping(ApiPaths.PATH_ID)
     public Mono<DeviceConfigDto> updateDeviceConfig (@PathVariable long id, @RequestBody DeviceConfigCreateUpdateDto deviceConfigCreateUpdateDto) {
-        log.info("Received request to UPDATE device config id={}, payload={}", id, deviceConfigCreateUpdateDto);
-        return deviceConfigService.updateDeviceConfig (id, deviceConfigCreateUpdateDto)
-                .doOnSuccess(dto -> log.info("Successfully updated device config id={}", dto.getId()))
-                .doOnError(e -> log.error("Error while updating device config id={}", id, e));
+        log.info("Request to update device config with id={}, data: {}", id, deviceConfigCreateUpdateDto);
+        return deviceConfigService.updateDeviceConfig(id, deviceConfigCreateUpdateDto)
+                .doOnSuccess(config -> log.info("Successfully updated device config: {}", config))
+                .doOnError(e -> log.error("Error while updating device config with id={}, data={}", id, deviceConfigCreateUpdateDto, e));
     }
 
     @GetMapping(ApiPaths.PATH_ID)
     public Mono<DeviceConfigDto> findDeviceConfigById (@PathVariable long id) {
-        log.debug("Received request to GET device config by id={}", id);
+        log.debug("Request to find device config by id={}", id);
         return deviceConfigService.findDeviceConfigById(id)
-                .doOnSuccess(dto -> log.info("Found device config id={}", dto.getId()))
-                .doOnError(e -> log.error("Error while fetching device config id={}", id, e));
+                .doOnSuccess(config -> log.debug("Found device config: {}", config))
+                .doOnError(e -> log.error("Error while finding device config with id={}", id, e));
     }
 
     @GetMapping(ApiPaths.PATH_LIST)
     public Mono<CustomPage<DeviceConfigDto>> findAllDeviceConfig(
             Pageable pageable) {
-        log.debug("Received request to LIST all device configs, pageable={}", pageable);
+        log.debug("Request to find all device configs with pageable={}", pageable);
         return deviceConfigService.findAllDeviceConfig(pageable)
-                .doOnSuccess(page -> log.info("Fetched {} device configs", page.getContent().size()))
-                .doOnError(e -> log.error("Error while fetching all device configs", e));
+                .doOnSuccess(page -> log.debug("Found {} device configs", page.getContent().size()))
+                .doOnError(e -> log.error("Error while fetching device configs, pageable={}", pageable, e));
     }
 
     @GetMapping(ApiPaths.PATH_SEARCH)
     public Mono<CustomPage<DeviceConfigDto>> findListDevicesConfigByParam(
             @ModelAttribute ListDeviceConfigsRequest listDeviceConfigsRequest,
             Pageable pageable) {
-        log.debug("Received request to SEARCH device configs with params={}, pageable={}", listDeviceConfigsRequest, pageable);
+        log.debug("Request to search device configs by params={}, pageable={}", listDeviceConfigsRequest, pageable);
         return deviceConfigService.getListDevicesConfigByParam(listDeviceConfigsRequest, pageable)
-                .doOnSuccess(page -> log.info("Search returned {} device configs", page.getContent().size()))
-                .doOnError(e -> log.error("Error while searching device configs with params={}", listDeviceConfigsRequest, e));
+                .doOnSuccess(page -> log.debug("Found {} device configs by params", page.getContent().size()))
+                .doOnError(e -> log.error("Error while searching device configs by params={}, pageable={}", listDeviceConfigsRequest, pageable, e));
     }
 
     @DeleteMapping(ApiPaths.PATH_ID)
     public void removeDeviceConfig (@PathVariable long id) {
-        log.warn("Received request to DELETE device config id={}", id);
-        deviceConfigService.removeDeviceConfig(id);
-        log.info("Successfully deleted device config id={}", id);
+        log.info("Request to remove device config with id={}", id);
+        deviceConfigService.removeDeviceConfig(id); // Если service возвращает Mono, можно добавить doOnSuccess/doOnError аналогично
     }
 
 

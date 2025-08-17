@@ -60,3 +60,4 @@ buildNumber.properties
 
 /logs/myapp.log
 /logs/myapp-error.log
+/logs/app.log
