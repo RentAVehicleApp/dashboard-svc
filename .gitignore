@@ -58,3 +58,6 @@ buildNumber.properties
 *.tar.gz
 *.rar
 
+/logs/myapp.log
+/logs/myapp-error.log
+/logs/app.log

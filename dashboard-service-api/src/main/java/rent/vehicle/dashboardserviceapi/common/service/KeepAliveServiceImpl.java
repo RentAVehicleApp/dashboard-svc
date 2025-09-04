@@ -1,6 +1,8 @@
 package rent.vehicle.dashboardserviceapi.common.service;
 
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -14,7 +16,11 @@ public class KeepAliveServiceImpl implements KeepAliveService {
     private final WebClient customerServiceWebClient;
     private final WebClient workerServiceWebClient;
 
-    @Scheduled(fixedRate =  600_000)
+    public static void test() {
+        Logger logger = LoggerFactory.getLogger(KeepAliveServiceImpl.class);
+        logger.info("test");
+    }
+//    @Scheduled(fixedRate =  600_000)
     @Override
     public String callDeviceService() {
         String answer =  deviceWebClient.get()
@@ -27,7 +33,7 @@ public class KeepAliveServiceImpl implements KeepAliveService {
         return answer;
     }
 
-    @Scheduled(fixedRate =  600_000)
+//    @Scheduled(fixedRate =  600_000)
     @Override
     public String callCustomerService() {
         String answer =  customerServiceWebClient.get()
@@ -40,7 +46,7 @@ public class KeepAliveServiceImpl implements KeepAliveService {
         return answer;
     }
 
-    @Scheduled(fixedRate =  600_000)
+//    @Scheduled(fixedRate =  600_000)
     @Override
     public String callWorkerService() {
         String answer =  workerServiceWebClient.get()
@@ -52,4 +58,6 @@ public class KeepAliveServiceImpl implements KeepAliveService {
         System.out.println("log: " + answer);
         return answer;
     }
+
+
 }
