@@ -12,7 +12,7 @@ import rent.vehicle.worker.dto.CreateWorkerDto;
 import rent.vehicle.worker.dto.ResponseWorkerDto;
 import rent.vehicle.worker.dto.UpdateWorkerDto;
 import rent.vehicle.dashboardserviceapi.common.config.QueryParamUtil;
-
+import rent.vehicle.worker.dto.WorkerAuthDto;
 
 
 @Service
@@ -88,6 +88,17 @@ public class WorkerDashboardServiceImpl implements WorkerDashboardService {
                         .build())
                 .retrieve()
                 .bodyToMono(new ParameterizedTypeReference<CustomPage<ResponseWorkerDto>>(){});
+    }
+
+    @Override
+    public Mono<WorkerAuthDto> findWorkerByLogin(String login) {
+        return workerServiceWebClient
+                .get()
+                .uri(uriBuilder -> uriBuilder
+                        .path("/api/v1/worker/auth/{login}")  // используем path variable
+                        .build(login))  // передаем login как path variable
+                .retrieve()
+                .bodyToMono(WorkerAuthDto.class);
     }
 
 }
