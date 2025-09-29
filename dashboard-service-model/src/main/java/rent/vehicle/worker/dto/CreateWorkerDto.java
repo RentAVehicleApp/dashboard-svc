@@ -14,5 +14,6 @@ import java.util.Collection;
 public class CreateWorkerDto {
     private String login;
     private String name;
+    private String password;
     private Collection<String> roles;
 }

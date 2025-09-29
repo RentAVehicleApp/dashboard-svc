@@ -21,7 +21,6 @@ public class JwtConfig {
     @Bean
     public JWTVerifier jwtVerifier(Algorithm algorithm) {
         return JWT.require(algorithm)
-                .withIssuer("your-app-name") // если используете issuer
                 .build();
     }
 }

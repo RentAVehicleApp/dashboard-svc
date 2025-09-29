@@ -53,7 +53,7 @@ public class WorkerController {
         return workerDashboardService.searchWorkers(filter,pageable);
     }
     @GetMapping("/worker/login")
-    public Mono<WorkerAuthDto> login(String login) {
+    public Mono<WorkerAuthDto> login(@RequestParam String login) {
         return workerDashboardService.findWorkerByLogin(login);
     }
 

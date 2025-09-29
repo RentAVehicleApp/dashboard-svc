@@ -95,8 +95,9 @@ public class WorkerDashboardServiceImpl implements WorkerDashboardService {
         return workerServiceWebClient
                 .get()
                 .uri(uriBuilder -> uriBuilder
-                        .path("/api/v1/worker/auth/{login}")  // используем path variable
-                        .build(login))  // передаем login как path variable
+                        .path("/api/v1/worker/login")
+                        .queryParam("login", login)  // ← добавляет ?login=value
+                        .build())
                 .retrieve()
                 .bodyToMono(WorkerAuthDto.class);
     }

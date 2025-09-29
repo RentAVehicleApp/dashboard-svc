@@ -49,13 +49,13 @@ public class ServiceConfig {
     @Bean ("customerServiceWebClient")
     public WebClient customerServiceWebClient() {
         return WebClient.builder()
-                .baseUrl("https://user-service-xt20.onrender.com")
+                .baseUrl("https://user-service-6ai4.onrender.com")
                 .build();
     }
     @Bean ("workerServiceWebClient")
     public WebClient workerServiceWebClient() {
         return WebClient.builder()
-                .baseUrl("https://worker-service-c4g6.onrender.com")
+                .baseUrl("https://worker-service-sy1z.onrender.com")
                 .build();
     }
 
